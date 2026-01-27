@@ -1,0 +1,20 @@
+#include<stdio.h>
+struct structure{
+    int reg;
+    char section;
+    float cgpa;
+};
+int main(){
+    struct structure stru1;
+    struct structure stru2;
+    stru1.reg=0001;
+    stru1.section='B';
+    stru1.cgpa=8.9;
+    
+    stru1.reg=0002;
+    printf("The Reg no is:%d\n",stru1.reg);
+    printf("The Section is:%c\n",stru1.section);
+    printf("The cgpa is:%f\n",stru1.cgpa);
+    printf("The Reg no second student is:%d\n",stru1.reg);
+    return 0;
+}
