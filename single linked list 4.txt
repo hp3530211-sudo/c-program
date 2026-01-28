@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct student{
+    long number;
+    struct student*nextwrd;
+};
+int main()
+{
+    struct student*cart1=(struct student*)malloc(sizeof(struct student));
+     struct student*cart2=(struct student*)malloc(sizeof(struct student));
+     struct student*cart3=(struct student*)malloc(sizeof(struct student));
+     cart1->number;
+     cart2->number;
+     cart3->number;
+     
+
+     printf("Enter The 1st Number: ");
+     scanf("%d",&cart1->number);
+     printf("Enter The 2nd Number :");
+     scanf("%d",&cart2->number);
+     printf("Enter The 3rd Number :");
+     scanf("%d",&cart3->number);
+    
+    
+
+     cart3->nextwrd=cart2;
+     cart2->nextwrd=cart1;
+     cart1->nextwrd=NULL;
+    
+     struct student*head=cart3;
+    printf("\n");
+     while(head!=0){
+         printf(" %d-->",head->number);
+         head=head->nextwrd;
+     }
+     printf("NULL");
+     return 0;
+     
+     }
