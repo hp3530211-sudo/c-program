@@ -1,0 +1,39 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct StudentDetails {
+    char name[50];
+    char dept[10];
+} StudentDetails;
+
+typedef struct Student {
+    int rollNo;
+    StudentDetails details;
+    struct Student* next;
+} Student;
+
+void displayStudents(Student* head) {
+    Student* temp = head;
+    while (temp != NULL) {
+        printf("%d %s %s -> ", temp->rollNo, temp->details.name, temp->details.dept);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    // Create students
+    Student s1 = {1, {"Arun", "CSE"}, NULL};
+    Student s2 = {2, {"Meena", "IT"}, NULL};
+    Student s3 = {3, {"Raj", "ECE"}, NULL};
+
+    // Link students
+    s1.next = &s2;
+    s2.next = &s3;
+
+    // Display students
+    displayStudents(&s1);
+    return 0;
+}
